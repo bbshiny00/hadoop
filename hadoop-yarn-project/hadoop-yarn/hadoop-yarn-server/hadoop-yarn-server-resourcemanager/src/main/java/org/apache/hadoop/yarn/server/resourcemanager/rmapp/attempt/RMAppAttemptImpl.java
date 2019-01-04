@@ -1822,9 +1822,8 @@ public class RMAppAttemptImpl implements RMAppAttempt, Recoverable {
                 appAttempt.startTime, appAttempt.recoveredFinalState,
                 newTrackingUrl, appAttempt.getDiagnostics(), null,
                 ContainerExitStatus.INVALID, appAttempt.getFinishTime(),
-                resUsage.getMemorySeconds(), resUsage.getVcoreSeconds(),
-                appAttempt.attemptMetrics.getPreemptedMemory(),
-                appAttempt.attemptMetrics.getPreemptedVcore());
+                resUsage.getResourceUsageSecondsMap(),
+                appAttempt.attemptMetrics.getPreemptedResourceSecondsMap());
         appAttempt.rmContext.getStateStore()
             .updateApplicationAttemptState(attemptState);
       }
